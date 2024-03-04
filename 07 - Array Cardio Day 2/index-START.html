@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Array Cardio 💪💪</title>
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
+
 <body>
   <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
   <script>
@@ -28,15 +30,31 @@
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
     // Array.prototype.every() // is everyone 19 or older?
+    let is19 = (person) => (new Date()).getFullYear() - person.year > 18;
+    const isThere19yo = people.some(is19);
+    console.log(isThere19yo);
+
+    const isEveryone19yo = people.every(is19);
+    console.log(isEveryone19yo);
+
+
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
+    const idNeeded = 823423;
+    let finder = fcom => fcom.id === idNeeded;
+    const foundComment = comments.find(finder);
+    console.log(foundComment);
 
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+    const i = comments.findIndex(finder);
+    comments.splice(i, 1);
+    console.table(comments);
 
   </script>
 </body>
+
 </html>
